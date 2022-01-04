@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/business/static/css/main.0e834774.chunk.css",
+    "main.js": "/business/static/js/main.5b25f87b.chunk.js",
+    "main.js.map": "/business/static/js/main.5b25f87b.chunk.js.map",
+    "runtime-main.js": "/business/static/js/runtime-main.43365441.js",
+    "runtime-main.js.map": "/business/static/js/runtime-main.43365441.js.map",
+    "static/js/2.41dfe4a6.chunk.js": "/business/static/js/2.41dfe4a6.chunk.js",
+    "static/js/2.41dfe4a6.chunk.js.map": "/business/static/js/2.41dfe4a6.chunk.js.map",
+    "index.html": "/business/index.html",
+    "static/css/main.0e834774.chunk.css.map": "/business/static/css/main.0e834774.chunk.css.map",
+    "static/js/2.41dfe4a6.chunk.js.LICENSE.txt": "/business/static/js/2.41dfe4a6.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/business/static/media/stairs.5fb1a7d4.jpg",
+    "static/media/dcode.f3baac43.png": "/business/static/media/dcode.f3baac43.png",
+    "static/media/loading.032e99f9.gif": "/business/static/media/loading.032e99f9.gif",
+    "static/media/p1.f5ed3732.jpg": "/business/static/media/p1.f5ed3732.jpg",
+    "static/media/p2.500c11f4.jpg": "/business/static/media/p2.500c11f4.jpg",
+    "static/media/p3.f8a872dc.jpg": "/business/static/media/p3.f8a872dc.jpg",
+    "static/media/p4.3099c517.jpg": "/business/static/media/p4.3099c517.jpg",
+    "static/media/p5.0cb00c5d.jpg": "/business/static/media/p5.0cb00c5d.jpg",
+    "static/media/p6.25a4f106.jpg": "/business/static/media/p6.25a4f106.jpg",
+    "static/media/product1.30832108.jpg": "/business/static/media/product1.30832108.jpg",
+    "static/media/product2.3c9cdef5.jpg": "/business/static/media/product2.3c9cdef5.jpg",
+    "static/media/product3.eac0cbec.jpg": "/business/static/media/product3.eac0cbec.jpg",
+    "static/media/road.f5b7d2c3.jpg": "/business/static/media/road.f5b7d2c3.jpg",
+    "static/media/service1.a11cf26f.jpg": "/business/static/media/service1.a11cf26f.jpg",
+    "static/media/service2.8ac91214.jpg": "/business/static/media/service2.8ac91214.jpg",
+    "static/media/service3.5725cfd7.jpg": "/business/static/media/service3.5725cfd7.jpg",
+    "static/media/t.dcc71acd.mp4": "/business/static/media/t.dcc71acd.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.43365441.js",
+    "static/js/2.41dfe4a6.chunk.js",
+    "static/css/main.0e834774.chunk.css",
+    "static/js/main.5b25f87b.chunk.js"
+  ]
+}
