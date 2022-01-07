@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../Styles/App.css';
 
 // Components
 import Article from '../Components/Article';
+import Anime from '../anime';
+
 
 // images
 import Product1 from '../images/product1.jpg';

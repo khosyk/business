@@ -3,24 +3,30 @@ import Article from '../Components/Article';
 import Loader from '../Components/Loader';
 
 // icons
-import {AiOutlineSearch} from 'react-icons/ai';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { useDispatch, useSelector } from 'react-redux';
+import { saveInput, setIsPop } from '../modules/GallerySlice';
+
 
 const body = document.querySelector("body");
 
-function Gallery({items, setIsPop,setIndex, isPop, index, showPop, imgSrc, handleValue, isValue, searchValue}) {
-    
+function Gallery({  setIndex, index, showPop, handleValue, }) {
 
 
-    
     return (
         <>
-        <GalleryBanner/>
-        <Gallery01/>
-        <Gallery02/>
+            <GalleryBanner />
+            <Gallery01 />
+            <Gallery02 
+            setIndex={setIndex} 
+            index={index} 
+            showPop={showPop} 
+            handleValue={handleValue} 
+            />
         </>
     )
 
-    function GalleryBanner(){
+    function GalleryBanner() {
         return (
             <section id="galleryBanner">
                 <div className="inner">
@@ -35,86 +41,102 @@ function Gallery({items, setIsPop,setIndex, isPop, index, showPop, imgSrc, handl
                     </div>
                 </div>
             </section>
-        );}
-    
-    function Gallery01(){
-        
-    return (
-
-        <section id='gallery01'>
-            <Article
-                name='word'
-                num='01' first='VIEW' second='PROJECTS' third='Lorem ipsum, dolor sit amet'
-                fourth='adipisicing elit. Incidunt blanditiis fugiat similique cupiditate nobis fugit, veniam amet aut distinctio obcaecati?'
-            />
-        </section>
-
-    )    
+        );
     }
 
-    function Gallery02(){
-        return(
-            <section id="gallery02">
-                <div className="inner">
-                    <main>
+    function Gallery01() {
+
+        return (
+
+            <section id='gallery01'>
+                <Article
+                    name='word'
+                    num='01' first='VIEW' second='PROJECTS' third='Lorem ipsum, dolor sit amet'
+                    fourth='adipisicing elit. Incidunt blanditiis fugiat similique cupiditate nobis fugit, veniam amet aut distinctio obcaecati?'
+                />
+            </section>
+
+        )
+    }
+
+}
+
+// gallery 02 를 통해 전달되는 값들을 redux state 에서 관리하기
+// 해당 state들은 pop에게도 전달되어야한다.
+
+function Gallery02({  setIndex, index, showPop, handleValue}) {
+
+    const input = useSelector((state) => state.gallery.input);
+    const data = useSelector((state) => state.gallery.data);
+    const isPop = useSelector((state) => state.gallery.isPop);
+    const dispatch = useDispatch();
+
+    return (
+        <section id="gallery02">
+            <div className="inner">
+                <main>
                     <div className='searchWrap'>
-                    <input name='searchValue'
-                    placeholder='Search here' onChange={isValue} value={searchValue}></input>
-                    <button onClick={() =>{handleValue()}}><AiOutlineSearch/></button>
+                                <input
+                                    type='text'
+                                    onChange={e => {
+                                        dispatch(saveInput(e.target.value));
+                                    }}  value={input} />
+
+                        <button onClick={() => {handleValue()}} ><AiOutlineSearch /></button>
                     </div>
-                    {items.length <= 0 ? <Loader/> :<div className='wrap'>
-                        {items.map((item, index) => {
-                                const imgSrc = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`;
-                                return (
-                                    <article key={index} onClick={() => {
-                                        setIsPop(true);
-                                        //버튼 클릭시 index state변경
-                                        setIndex(index);
-                                        showPop(index);
-                                    }}>
-                                        <div className="inner">
-                                            <span>
-                                                {item.id.substring(7,11)}.
-                                            </span>
-                                            <div className="pic" >
-                                                <img src={imgSrc} alt={`${item.title}`}/>
-                                            </div>
-                                            <h2>{ item.title === '' ? 'NULL' : item.title}</h2>
-                                            <div className='picBottom'>
-                                                <div>
-                                                    <img src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`} alt={item.title}></img>
-                                                <strong>{item.owner}</strong>
-                                                </div>
+                    {data.length <= 0 ? <Loader /> : <div className='wrap'>
+                        {data.map((data, index) => {
+                            const {server,id,secret,title,farm,owner} =data;
+                            const imgSrc = `https://live.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
+                            return (
+                                <article key={index} onClick={() => {
+                                    dispatch(setIsPop(true))
+                                    //버튼 클릭시 index state변경
+                                    setIndex(index);
+                                    showPop(index);
+                                }}>
+                                    <div className="inner">
+                                        <span>
+                                            {id.substring(7, 11)}.
+                                        </span>
+                                        <div className="pic" >
+                                            <img src={imgSrc} alt={`${title}`} />
+                                        </div>
+                                        <h2>{title === '' ? 'NULL' : title}</h2>
+                                        <div className='picBottom'>
+                                            <div>
+                                                <img src={`http://farm${farm}.staticflickr.com/${server}/buddyicons/${owner}.jpg`} alt={title}></img>
+                                                <strong>{owner}</strong>
                                             </div>
                                         </div>
-                                    </article>
-                                )
-                            })
+                                    </div>
+                                </article>
+                            )
+                        })
                         }
                     </div>}
-                    </main>
-                </div>
-                {isPop ? <Pop /> : null}
-    
-            </section>)
-    }
-
-
-    function Pop() {
+                </main>
+                {isPop ? <Pop index={index}/> : null}
+            </div>
+        </section>)
+        
+    function Pop({ index }) {
+        
+    const imgSrc = useSelector((state => state.gallery.imgSrc));
 
         return (
             <aside className="pop">
                 {/* 해당 이미지 url적용 */}
-                <img src={imgSrc} alt={items[index].title} />
+                <img src={imgSrc} alt={data[index].title} />
                 {/* items의 index번째 객체 안에 있는 텍스트 */}
-                <p>{items[index].title}</p>
+                <p>{data[index].title}</p>
                 <span onClick={() => {
-                    setIsPop(false);
+                    dispatch(setIsPop(false));
                     body.style.overflow = "auto";
                 }}>Close</span>
             </aside>
         )
     }
-}
 
+}
 export default Gallery;
