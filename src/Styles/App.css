@@ -242,8 +242,13 @@ header .inner .gnb .btnMenu {
 }
 @media screen and (max-width: 1025px) {
   #intro01 .word .wrap .number {
-    left: 43%;
-    top: -50px;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 5px;
+  }
+  #intro01 .word .wrap .number .numberCover {
+    display: none;
   }
 }
 #intro01 .word .wrap .number .numberCover {
@@ -1160,8 +1165,13 @@ header .inner .gnb .btnMenu {
 }
 @media screen and (max-width: 1025px) {
   #member02 .word .wrap .number {
-    left: 39%;
-    top: -50px;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 5px;
+  }
+  #member02 .word .wrap .number .numberCover {
+    display: none;
   }
 }
 #member02 .word .wrap .number .numberCover {
@@ -1340,8 +1350,13 @@ header .inner .gnb .btnMenu {
 }
 @media screen and (max-width: 1025px) {
   #youtube01 .word .wrap .number {
-    left: 39%;
-    top: -50px;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 5px;
+  }
+  #youtube01 .word .wrap .number .numberCover {
+    display: none;
   }
 }
 #youtube01 .word .wrap .number .numberCover {
@@ -1679,8 +1694,13 @@ header .inner .gnb .btnMenu {
 }
 @media screen and (max-width: 1025px) {
   #gallery01 .word .wrap .number {
-    left: 39%;
-    top: -50px;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 5px;
+  }
+  #gallery01 .word .wrap .number .numberCover {
+    display: none;
   }
 }
 #gallery01 .word .wrap .number .numberCover {
@@ -2018,8 +2038,13 @@ header .inner .gnb .btnMenu {
 }
 @media screen and (max-width: 1025px) {
   #community01 .word .wrap .number {
-    left: 39%;
-    top: -50px;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 5px;
+  }
+  #community01 .word .wrap .number .numberCover {
+    display: none;
   }
 }
 #community01 .word .wrap .number .numberCover {
