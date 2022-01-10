@@ -2228,6 +2228,269 @@ header .inner .gnb .btnMenu {
   opacity: 0;
 }
 
+#contact01 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 150px 0px 100px 0px;
+}
+@media screen and (max-width: 1025px) {
+  #contact01 {
+    overflow: hidden;
+    background-color: black;
+  }
+}
+#contact01 .word {
+  right: 0;
+  width: 80%;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 1025px) {
+  #contact01 .word {
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+}
+#contact01 .word .wrap {
+  position: relative;
+  margin: 0px auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#contact01 .word .wrap .number {
+  position: absolute;
+  font: 900 45px "Work Sans", sans-serif;
+  left: -50px;
+  top: -30px;
+  padding-right: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+@media screen and (max-width: 1025px) {
+  #contact01 .word .wrap .number {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    color: #d6336c;
+  }
+  #contact01 .word .wrap .number::first-letter {
+    color: #fff;
+  }
+  #contact01 .word .wrap .number .numberCover {
+    display: none;
+  }
+}
+#contact01 .word .wrap .number .numberCover {
+  position: absolute;
+  right: -20px;
+  transform: rotateZ(45deg);
+  top: 30px;
+  color: transparent;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  border-left: 2px solid #000;
+  background-color: #fff;
+  z-index: 2;
+}
+#contact01 .word .wrap span {
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-bottom: -10px;
+  z-index: 3;
+}
+#contact01 .word .wrap h2 {
+  font: bolder 35px "Black Han Sans", sans-serif;
+  padding-left: 2px;
+  margin-bottom: 10px;
+}
+#contact01 .word .wrap .p1 {
+  width: 100%;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 1025px) {
+  #contact01 .word .wrap .p1 {
+    width: 100%;
+  }
+}
+#contact01 .word .wrap .p2 {
+  width: 100%;
+  font-weight: 100;
+  min-height: 100px;
+}
+@media screen and (max-width: 1025px) {
+  #contact01 .word .wrap .p2 {
+    width: 100%;
+  }
+}
+
+#contact02 {
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+@media screen and (max-width: 1025px) {
+  #contact02 {
+    padding: 150px 0px;
+  }
+}
+#contact02 .inner {
+  width: 80%;
+}
+#contact02 .inner h3 {
+  letter-spacing: 8px;
+  font-weight: 100;
+  margin-bottom: 80px;
+}
+#contact02 .inner .wrap {
+  position: relative;
+  text-align: center;
+}
+#contact02 .inner .wrap .innerNumber {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+#contact02 .inner .wrap .innerNumber .innerNumberBg {
+  position: absolute;
+  color: #d0ebff;
+  font-size: 35px;
+  z-index: -1;
+}
+#contact02 .inner .wrap .innerNumber div {
+  position: absolute;
+  font-size: 9px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: #d6336c;
+  font-weight: 900;
+  background-color: #fff;
+  z-index: 1;
+}
+#contact02 .inner .wrap #map {
+  width: 100%;
+  height: 400px;
+  background-color: black;
+  transition: all 0.5s ease-in-out;
+  border: 3px solid black;
+}
+@media screen and (max-width: 1279px) {
+  #contact02 .inner .wrap #map {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #contact02 .inner .wrap #map {
+    height: 250px;
+  }
+}
+#contact02 .inner .wrap .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#contact02 .inner .wrap .buttons button {
+  padding: 5px;
+  border: 3px solid black;
+  border-top: none;
+  width: 50%;
+  background-color: transparent;
+}
+
+#contact03 {
+  width: 100%;
+  padding: 100px 0px;
+  display: flex;
+  justify-content: center;
+}
+#contact03 .inner {
+  width: 80%;
+}
+#contact03 .inner .wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contact03 .inner .wrap h4 {
+  text-align: center;
+  padding-bottom: 100px;
+  font: 900 45px "Work Sans", sans-serif;
+  border-bottom: 2px solid #d6336c;
+  width: 80%;
+}
+#contact03 .inner .wrap form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
+#contact03 .inner .wrap form .inputWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 10px;
+}
+#contact03 .inner .wrap form .inputWrap label {
+  letter-spacing: 8px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+#contact03 .inner .wrap form .inputWrap label input {
+  padding: 8px 0px;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 1px solid #888;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#contact03 .inner .wrap form .query {
+  margin-top: 18px;
+  width: 400px;
+}
+#contact03 .inner .wrap form .query textarea {
+  width: 400px;
+  height: 200px;
+  border: none;
+  border-bottom: 1px solid #8888;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#contact03 .inner .wrap form .buttonWrap {
+  width: 400px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+#contact03 .inner .wrap form .buttonWrap button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#contact03 .inner .wrap form .buttonWrap button:hover {
+  background-color: #d6336c;
+}
+
 footer {
   width: 100%;
   position: relative;

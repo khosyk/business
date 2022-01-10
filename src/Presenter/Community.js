@@ -64,7 +64,7 @@ export default function Community() {
 
         )
     }
-
+    
     function Community02() {
         return (
             <section id='community02'>
