@@ -73,7 +73,6 @@ export default function Contact({ panTo, panToSecond }) {
                         <label>
                         <input placeholder='NAME'></input>
                         </label>
-                        
                         <label>
                         <input placeholder='EMAIL'></input>
                         </label>

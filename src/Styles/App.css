@@ -4,6 +4,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 body {
@@ -19,6 +20,33 @@ ul, ol, li {
 
 a {
   text-decoration: none;
+}
+
+.h {
+  position: absolute;
+  top: -99999px;
+  opacity: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border: none;
+}
+table th, table td {
+  border: none;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+}
+
+textarea {
+  resize: none;
 }
 
 header {
@@ -136,6 +164,8 @@ header .inner .gnb .btnMenu {
 }
 #banner .inner .wrap .title h1 span {
   color: #d6336c;
+  font-weight: bolder;
+  font-family: "Black Han Sans", sans-serif;
 }
 #banner .inner .nums ul {
   display: flex;
@@ -939,6 +969,8 @@ header .inner .gnb .btnMenu {
 }
 #memberBanner .inner .wrap .title h1 span {
   color: #d6336c;
+  font-weight: bolder;
+  font-family: "Black Han Sans", sans-serif;
 }
 #memberBanner .innerBottom {
   position: absolute;
@@ -1301,6 +1333,8 @@ header .inner .gnb .btnMenu {
 }
 #youtubeBanner .inner .wrap .title h1 span {
   color: #d6336c;
+  font-weight: bolder;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 #youtube01 {
@@ -1645,6 +1679,8 @@ header .inner .gnb .btnMenu {
 }
 #galleryBanner .inner .wrap .title h1 span {
   color: #d6336c;
+  font-weight: bolder;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 #gallery01 {
@@ -1989,6 +2025,8 @@ header .inner .gnb .btnMenu {
 }
 #communityBanner .inner .wrap .title h1 span {
   color: #d6336c;
+  font-weight: bolder;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 #community01 {
@@ -2514,6 +2552,177 @@ header .inner .gnb .btnMenu {
 }
 #contact03 .inner .wrap form .buttonWrap button:hover {
   background-color: #d6336c;
+}
+
+#join {
+  padding: 100px 0px 200px 0px;
+  width: 100%;
+}
+#join .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#join .inner h1 {
+  margin-bottom: 100px;
+  width: 50%;
+  text-align: center;
+  font: 400 35px "Black Han Sans", sans-serif;
+  position: relative;
+}
+#join .inner h1::after {
+  content: "";
+  width: 6%;
+  min-width: 25px;
+  height: 20px;
+  border-bottom: 2px solid #000;
+  position: absolute;
+  top: 50px;
+  left: 47%;
+}
+#join .inner h1 span {
+  font: 400 35px "Black Han Sans", sans-serif;
+  color: #d6336c;
+}
+#join .inner .textBox {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 1025px) {
+  #join .inner .textBox {
+    width: 70%;
+    font-size: 14px;
+    overflow-wrap: break-word;
+  }
+}
+#join .inner .textBox strong {
+  display: inline-block;
+}
+#join .inner .textBox span {
+  margin-bottom: 10px;
+}
+#join .inner .textBox p {
+  font-weight: 100;
+  font-size: 13px;
+}
+#join .inner .info {
+  width: 60%;
+  margin-bottom: 50px;
+}
+#join .inner .info h2 {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+#join .inner .info div {
+  width: 100%;
+  height: 150px;
+  overflow: auto;
+  border: 2px solid #555;
+  padding: 5px;
+}
+#join .inner .info div p {
+  font-size: 15px;
+}
+#join .inner form {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+#join .inner form fieldset {
+  width: 100%;
+}
+#join .inner form fieldset legend {
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #000;
+}
+#join .inner form fieldset table {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+#join .inner form fieldset table tbody {
+  width: 70%;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 1025px) {
+  #join .inner form fieldset table tbody {
+    width: 100%;
+  }
+}
+#join .inner form fieldset table tbody tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px;
+}
+#join .inner form fieldset table tbody tr th {
+  width: 50%;
+  padding-left: 5%;
+  text-align: left;
+}
+@media screen and (max-width: 1025px) {
+  #join .inner form fieldset table tbody tr th {
+    width: 40%;
+    font-size: 12px;
+    padding-left: 0;
+  }
+}
+#join .inner form fieldset table tbody tr td {
+  width: 50%;
+  text-align: left;
+}
+@media screen and (max-width: 1025px) {
+  #join .inner form fieldset table tbody tr td {
+    width: 60%;
+    font-size: 12px;
+  }
+}
+#join .inner form fieldset table tbody tr td input {
+  line-height: 2.5;
+  border-bottom: 2px solid #666;
+  width: 100%;
+}
+#join .inner form fieldset table tbody tr td textarea {
+  border-bottom: 2px solid #666;
+  width: 100%;
+  min-height: 150px;
+  padding: 2px 5px;
+}
+#join .inner form fieldset table tbody .btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+#join .inner form fieldset table tbody .btnBox .btn {
+  width: 150px;
+  height: 30px;
+  margin-left: 10px;
+  background-color: #000;
+  color: white;
+}
+#join .inner form fieldset table tbody .btnBox .btn:hover {
+  cursor: pointer;
+  background-color: #d6336c;
+  color: black;
+}
+@media screen and (max-width: 1025px) {
+  #join .inner form fieldset table tbody .btnBox .btn {
+    width: 50%;
+    font-size: 12px;
+  }
+  #join .inner form fieldset table tbody .btnBox .btn:nth-child(1) {
+    margin-left: 0;
+  }
 }
 
 footer {
