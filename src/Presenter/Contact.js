@@ -8,11 +8,32 @@ export default function Contact({ panTo, panToSecond }) {
 
     return (
         <>
+            <ContactBanner/>
             <Contact01 />
             <Contact02 />
             <Contact03 />
         </>
     )
+    
+    function ContactBanner() {
+
+        return(
+            <section id="contactBanner">
+                <div className="inner">
+                    <div className='wrap'>
+                        <p>
+                            ALL THESE UP TO
+                        </p>
+                        <div className='title'>
+                            <span>YOUR</span>
+                            <h1>CH<span>O</span>ICE</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        )
+
+    }
 
     function Contact01() {
 

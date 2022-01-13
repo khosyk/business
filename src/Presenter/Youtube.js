@@ -14,7 +14,6 @@ import {
 } from 'react-icons/ai'
 
 // sources
-import loadVideo from '../images/t.mp4';
 
 
 export default function Youtube({ items, loader, isPop, setIsPop, setYoutubeData, youtubeData, lockScroll }) {
@@ -32,8 +31,6 @@ function Banner(){
     return (<>
 
         <section id="youtubeBanner">
-            <video src={loadVideo} autoPlay muted loop >
-            </video>
             <div className="inner">
                 <div className='wrap'>
                     <p>
@@ -97,7 +94,7 @@ function Youtube02 (){
                                 <div className='youtubeText'>
                                     <h3>{`${items.snippet.title}`}</h3>
 
-                                    <div> <span>PROJECT </span> 2021.{`${Math.floor(Math.random()*(12)+1)}.${Math.floor(Math.random()*(30) +1)}`
+                                    <div> <span>PROJECT </span> 2021.{`${Math.floor(Math.random()*(12)+1)}.${Math.floor(Math.random()*(30)+1)}`
                                         
                                         }</div>
                                 </div>

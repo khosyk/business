@@ -1,5 +1,5 @@
 #join{
-  padding:100px 0px 200px 0px;
+  padding:100px 0px 150px 0px;
   width:100%;
   .inner{
     display: flex;
@@ -113,7 +113,6 @@
               td{
                 width:50%;
                 text-align: left;
-                
                 @media screen and(max-width:1025px) {
                   width:60%;
                   font-size: 12px;
@@ -130,11 +129,25 @@
                   padding:2px 5px;
                 }
               }
+              .checkBoxes{
+                display: flex;
+                flex-direction: column;
+                label{
+                  display: inline-block;
+                  width:40%;
+                  line-height: 2.5;
+                }
+                input{
+                  border: none;
+                  width:60%;
+                }
+              }
             }
             .btnBox{
               width:100%;
               display: flex;
               justify-content: flex-end;
+              padding:10px 0px;
               .btn{
                 width:150px;
                 height:30px;

@@ -1,3 +1,76 @@
+#contactBanner{
+    
+    width:100%;
+    padding-top:10%;
+    min-height: 400px;
+    position: relative;
+    margin-bottom:100px;
+    overflow: hidden;
+    @media screen and (min-width:1279px) {
+        min-height:none;
+        padding-top:10%;
+    }
+    
+    @media screen and (max-width:1025px) {
+    }
+    .inner{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top:0;
+        width:100%;
+        height:100%;
+        transition-duration: 3s;
+        transition:all 1s ease-in-out;
+        background: no-repeat center/cover fixed url(../images/contactBanner.jpg);
+        @media screen and(max-width:1279px) {
+            width:100%;
+        }
+        .wrap{
+        color:#fff;
+        text-shadow: 1px 1px 2px #000;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: center;
+        background: rgba(0,0,0,0.4);
+        padding-left:20%;
+        width:100%;
+        height:100%;
+        p{
+            display: inline-block;
+            font-size:14px;
+            font-weight:100;
+            padding-left:2px;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+        .title{
+            span{
+                font-size:40px;
+                font-weight:100;
+                letter-spacing: 5px;
+            }
+            h1{
+                margin-top:-10px;
+                padding-left:2px;
+                letter-spacing: 3px;
+                font-size:40px;
+                font-weight: bolder;
+                font-family: 'Black Han Sans', sans-serif;
+                    span{
+                        color:#d6336c;
+                        font-weight: bolder;
+                        font-family: 'Black Han Sans', sans-serif;
+                    }
+            }
+        }
+        }
+    }
+    
+}
+
 
 #contact01{
   position: relative;
