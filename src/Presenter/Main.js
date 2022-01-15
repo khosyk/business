@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import '../Styles/App.css';
 
 // Components
@@ -20,6 +20,13 @@ import { HiSpeakerphone } from 'react-icons/hi';
 import { BsGearWideConnected, BsArrowsFullscreen } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
 
+//swiper
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css';
+import 'swiper/components/navigation/navigation.min.css';
+import SwiperCore, { Navigation, Pagination,Autoplay } from 'swiper';
+
 
 export default function Main() {
 
@@ -35,63 +42,115 @@ export default function Main() {
 }
 
 const Banner = () => {
-    return (
+    SwiperCore.use([Navigation,Pagination,Autoplay]);
+    const [swiper, setSwiper] = useState(null);
+    const [swiperIndex, setSwiperIndex] = useState(null);
+    
+    const navigationPrevRef = useRef(null);
+    const navigationNextRef = useRef(null);
+    const paginationNums = useRef(null);
+    
+    const swiperParams = {
+        slidesPerView: 1,
+        spaceBetween: 100,
+        navigation: {prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current},
+        autoplay:{delay:2000},
+        pagination:{
+            el:paginationNums.current,
+            type:'bullets',
+            clickable:true},
+        onBeforeInit: (swiper) =>{
+            swiper.params.navigation.prevEl = navigationPrevRef.current;
+            swiper.activeIndex = swiperIndex;
+            swiper.navigation.update();
+        },
+        onSwiper: setSwiper,
+        onSlideChange: (e) => {setSwiperIndex(e.activeIndex);
+            console.log(swiperIndex);
+        }
+    }
+    
 
+    return (
         <section id="banner" >
             <div className="inner">
                 <div className='wrap'>
-                <p>
-                    CREATIVITY IS
-                </p>
-                <div className='title'>
-                    <span>OUR</span>
-                    <h1>VI<span>S</span>ION</h1>
-                </div>
-                <div className='nums'>
-                    <ul>
-                        <li>
-                            01
-                        </li>
-                        <li>
-                            02
-                        </li>
-                        <li>
-                            03
-                        </li>
+                    <Swiper {...swiperParams} className="swiperStyle" ref={swiper}>
+                        <SwiperSlide className='swipers'>
+                            <div className='title'>
+                                <p>
+                                    CREATIVITY IS
+                                </p>
+                                <span className='titleTop'>OUR</span>
+                                <h1>VI<span>S</span>ION</h1>
+                                <p className='titleBottom'>
+                                WHAT WE DO
+                                </p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className='swipers'>
+                            <div className='title'>
+                                <p>
+                                    PEERLESS
+                                    IS
+                                </p>
+                                <span className='titleTop'>OUR</span>
+                                <h1>GO<span>A</span>L</h1>
+                                <p className='titleBottom'>
+                                WHAT WE BELIEVE
+                                </p>
+                            </div></SwiperSlide>
+                        <SwiperSlide className='swipers'>
+                            <div className='title'>
+                                <p>
+                                    PRACTICAL IS
+                                </p>
+                                <span className='titleTop'>OUR</span>
+                                <h1>MI<span>S</span>SION</h1>
+                                <p className='titleBottom'>
+                                WHAT WE BEHAVE
+                                </p>
+                            </div></SwiperSlide>
+                    </Swiper>
+                    <ul 
+                    className='swiperPagination'
+                    ref={paginationNums}>
+                        <li>01</li>
+                        <li>02</li>
+                        <li>03</li>
                     </ul>
-                </div>
                 </div>
             </div>
             <div className='arrows'>
-                <button className='arrowLeft'>←</button>
+                <button className='arrowLeft' ref={navigationPrevRef}>←</button>
                 <span>I</span>
-                <button className='arrowRight'>→</button>
+                <button className='arrowRight' ref={navigationNextRef}>→</button>
             </div>
         </section>
 
     );
 }
 
- const Intro01 = () => {
+const Intro01 = () => {
     return (
 
         <section id='intro01'>
-            <div className='background'/>
+            <div className='background' />
             <div className='word'>
                 <div className='wrap'>
-                <div className='number'>01
-                <div className='numberCover'>
-                ■
-                </div>
-                </div>
-                <span>LOREM</span>
-                <h2>IPSUM</h2>
-                <p className='p1'>
-                Lorem ipsum, dolor sit amet
-                </p>
-                <p className='p2'>
-                adipisicing elit. Incidunt blanditiis fugiat similique cupiditate nobis fugit, veniam amet aut distinctio obcaecati?
-                </p>
+                    <div className='number'>01
+                        <div className='numberCover'>
+                            ■
+                        </div>
+                    </div>
+                    <span>LOREM</span>
+                    <h2>IPSUM</h2>
+                    <p className='p1'>
+                        Lorem ipsum, dolor sit amet
+                    </p>
+                    <p className='p2'>
+                        adipisicing elit. Incidunt blanditiis fugiat similique cupiditate nobis fugit, veniam amet aut distinctio obcaecati?
+                    </p>
                 </div>
             </div>
             <div className='wrapArticles'>
@@ -120,7 +179,7 @@ const Banner = () => {
 
 
 
- const Intro02 = () => {
+const Intro02 = () => {
     return (
 
         <section id="intro02">
@@ -167,7 +226,7 @@ const Banner = () => {
 }
 
 
- const Intro03 = () => {
+const Intro03 = () => {
     return (
 
         <section id='intro03'>
@@ -196,44 +255,15 @@ const Banner = () => {
 }
 
 
- const Intro04 = () => {
-    return (
+const Intro04 = () => {
+    const articleSrc = [`${Service1}`,`${Service2}`,`${Service3}`];
 
+    return (
         <section id='intro04'>
             <div className='inner'>
-                <article>
+                {articleSrc.map((articleSrc)=><article>
                     <div className='imgWrap'>
-                        <img src={Service1} alt='guide1' />
-                    </div>
-                    <div className='wordWrap'>
-                        <h5>LOREM IPSUM</h5>
-                        <p>
-                            Lorem ipsum is dolor de picaso casabla
-                        </p>
-
-                        <span>
-                            +
-                        </span>
-                    </div>
-                </article>
-                <article>
-                    <div className='imgWrap'>
-                        <img src={Service2} alt='guide1' />
-                    </div>
-                    <div className='wordWrap'>
-                        <h5>LOREM IPSUM</h5>
-                        <p>
-                            Lorem ipsum is dolor de picaso casabla
-                        </p>
-
-                        <span>
-                            +
-                        </span>
-                    </div>
-                </article>
-                <article>
-                    <div className='imgWrap'>
-                        <img src={Service3} alt='guide1' />
+                        <img src={articleSrc} alt='guide1' />
                     </div>
                     <div className='wordWrap'>
                         <h5>LOREM IPSUM</h5>
@@ -244,7 +274,7 @@ const Banner = () => {
                             +
                         </span>
                     </div>
-                </article>
+                </article>)}
             </div>
         </section>
 

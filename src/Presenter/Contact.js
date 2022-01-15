@@ -60,7 +60,7 @@ export default function Contact() {
                 <div className="inner">
                     <div className='wrap'>
                         <p>
-                            ALL THESE UP TO
+                            UP TO
                         </p>
                         <div className='title'>
                             <span>YOUR</span>

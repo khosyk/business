@@ -10,7 +10,7 @@
         margin-bottom: 100px;
         width:50%;
         text-align: center;
-        font:400 35px 'Black Han Sans', sans-serif;
+        font:400 35px $hans;
         position: relative;
         &::after{
           content: '';
@@ -23,8 +23,8 @@
           left:47%;
         }
         span{
-          font:400 35px 'Black Han Sans', sans-serif;
-          color:#d6336c;
+          font:400 35px $hans;
+          color:$bred;
         }
       }
       .textBox{
@@ -156,7 +156,7 @@
                 color:white;
                 &:hover{
                   cursor: pointer;
-                  background-color: #d6336c;
+                  background-color: $bred;
                   color:black;
                 }
                 @media screen and(max-width:1025px) {
