@@ -1,9 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import '../Styles/App.css';
 
 // Components
 import Article from '../Components/Article';
-import Anime from '../anime';
 
 
 // images

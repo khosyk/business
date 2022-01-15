@@ -53,7 +53,7 @@ export default function GalleryContainer() {
         
         try{
             
-        await axios.get( input == '' ? url3 : url2).then(json => {
+        await axios.get( input === '' ? url3 : url2).then(json => {
             console.log(json);
             json.data.photos.photo.length === 0 ?
             alert('there is no pics for this keyword'):
