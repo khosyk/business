@@ -17,7 +17,6 @@ export default function Community() {
         axios
             .get(url)
             .then(json => {
-                console.log(json.data.data);
                 setPosts(json.data.data);
             })
     }, []);

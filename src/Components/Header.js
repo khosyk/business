@@ -1,15 +1,17 @@
 import React from 'react';
 import '../Styles/App.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // icons
 import Logo from '../images/dcode.png'
 import { FcMenu } from 'react-icons/fc';
+import { ActiveStyle, ScrollToTop } from './Functions';
 
 
 
 export default function Header() {
 
+  ScrollToTop();
     return (
         <>
         <header>
@@ -20,50 +22,64 @@ export default function Header() {
 };
 
 const NavMain = () => {
-    
+
   return (
     <>
       <div className="inner">
-        <Link to="/">
+        <NavLink  to="/" >
           <div className='logo'>
             <img src={Logo}alt='dcodelab logo' />
             <h1>
               DCODELAB
             </h1>
           </div>
-        </Link>
+        </NavLink>
         <nav className="menu">
           <ul className="gnb">
             <li>
-              <Link className='gnbLink' to="/members">
+              <NavLink 
+              style={ActiveStyle}
+              className='gnbLink' to="/members"
+              >
                 MEMBERS
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className='gnbLink' to="/youtube">
+              <NavLink 
+              style={ActiveStyle}
+              className='gnbLink' to="/youtube">
                 YOUTUBE
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className='gnbLink' to="/gallery">
+              <NavLink 
+              style={ActiveStyle}className='gnbLink' to="/gallery">
                 GALLERY
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className='gnbLink' to="/community">
+              <NavLink 
+              style={ActiveStyle}className='gnbLink' to="/community">
               COMMUINITY
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className='gnbLink' to="/contact">
+              <NavLink 
+              style={ActiveStyle}className='gnbLink' to="/contact">
                 CONTACT
-              </Link>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink 
+              style={ActiveStyle}className='gnbLink' to="/membership">
+                MEMBERSHIP
+              </NavLink>
             </li>
             <li>
               <div className="btnMenu">
-                <Link to="menu" >
+                <NavLink to="menu" >
                   <FcMenu />
-                </Link>
+                </NavLink>
               </div>
             </li>
           </ul>

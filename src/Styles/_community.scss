@@ -20,8 +20,7 @@
       top:0;
       width:100%;
       height:100%;
-      transition-duration: 3s;
-      transition:all 1s ease-in-out;
+      transition:all .5s ease-in-out;
       background: no-repeat center/cover fixed url(../images/communityBanner.png);
       @media screen and(max-width:1279px) {
           width:100%;

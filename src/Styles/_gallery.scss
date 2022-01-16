@@ -20,9 +20,8 @@
       top:0;
       width:100%;
       height:100%;
-      transition-duration: 3s;
-      transition:all 1s ease-in-out;
       background: no-repeat center/cover fixed url(../images/galleryBanner.png);
+      transition:all .5s ease-in-out;
       @media screen and(max-width:1279px) {
           width:100%;
       }

@@ -7,8 +7,8 @@
     padding-top:30%;
     min-height: 600px;
     position: relative;
-    background:no-repeat center/cover fixed url(../images/banner.jpg) ;
-    
+    background:no-repeat center/cover fixed ;
+    transition: all .3s ease-in-out;
     @media screen and (min-width:1279px) {
         min-height:none;
         padding-top:30%;
@@ -27,6 +27,10 @@
         @media screen and (max-width:1025px) {
             background: rgba(0,0,0,0.4);
         }
+        
+        @media screen and (max-width:500px) {
+            width: 60%;
+        }
         .wrap{
             width:100%;
         .swiperStyle{
@@ -37,6 +41,9 @@
             margin-left: 25%;
             @media screen and (max-width:1025px) {
                 padding-top: 30px;
+            }
+            @media screen and (max-width:500px) {
+                margin-left: 6%;
             }
             .swipers{
                 .title{
@@ -68,6 +75,10 @@
                         color:$bred;
                         font-family: $hans;
                         transition: all .5s ease-in-out;
+
+                        @media screen and (max-width:500px) {
+                            font-size:30px;
+                        }
                         }
                     }
                     .titleBottom{
@@ -93,11 +104,51 @@
                             font-size: 12px;
                         }
                     }
+                    
+                    @media screen and (max-width:500px) {
+                        margin-bottom: -50px;
+                        p{
+                            font-size: 12px;
+                        }
+                        span{
+                            font-size: 20px;
+                        }
+                        h1{
+                            font-size: 20px;
+                            span{
+                                font-size: 20px;
+                            }
+                        }
+                        .titleBottom{
+                            font-size: 12px;
+                        }
+                    }
                 }
             }
         }
         
         .swiperPagination{
+            width:100%;
+            margin-left: 25%;
+            text-align: left;
+            color:#fff;
+            margin-top: 70px;
+            @media screen and (max-width:1025px) {
+                width:100%;
+
+            }
+            
+            @media screen and (max-width:500px) {
+                margin-left: 6%;
+            }
+            .swiper-pagination-bullet{
+                display: inline-block;
+                margin-right: 5px;
+                &.swiper-pagination-bullet-active{
+                    border-top: 1px solid #fff;
+                }
+
+            }
         }
 
         }
@@ -111,17 +162,24 @@
         width:100px;
         height:50px;
         padding:0 10px;
-        font-weight: 100;
-        font-size: 22px;
         justify-content: space-around;
         align-items: center;
+        
+        @media screen and (max-width:500px) {
+            width:90px;
+            height:35px;
+            right:18%;
+        }
         button{
             border: none;
             background-color: transparent;
-            width:40px;
-            height:50px;
             font-size: 18px;
+            font-weight: 100;
             cursor: pointer;
+            @media screen and (max-width:500px) {
+                line-height: 18px;
+                font-size:14px;
+            }
         }
         .arrowLeft{
             &:hover{
@@ -701,6 +759,9 @@
                     outline: 3px solid $bred;
                 }
             }
+            @media screen and (max-width: 500px){
+                margin:3px;
+            }
             .imgWrap{
                 width:230px;
                 height:180px;
@@ -718,6 +779,9 @@
                         width:300px;
                     }
                 }
+                @media screen and (max-width: 500px){
+                    width:75px;
+                }
             
             }
             .wordWrap{
@@ -730,6 +794,10 @@
                 }
                 h5{
                     margin-bottom:5px;
+                    color: #000;
+                    &:active{
+                        color:#000;
+                    }
                 }
                 p{  
                     font-size: 14px;
@@ -739,6 +807,9 @@
                     @media screen and(max-width:1025px) {
                         font-size: 13px;
                         padding-bottom: 50px;
+                    }
+                    @media screen and(max-width:500px) {
+                        opacity: 0.5;
                     }
                 }
                 span{

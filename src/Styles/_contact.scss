@@ -20,8 +20,7 @@
         top:0;
         width:100%;
         height:100%;
-        transition-duration: 3s;
-        transition:all 1s ease-in-out;
+        transition:all .5s ease-in-out;
         background: no-repeat center/cover fixed url(../images/contactBanner.jpg);
         @media screen and(max-width:1279px) {
             width:100%;
@@ -76,8 +75,8 @@
   position: relative;
   display: flex;
   width:100%;
-  justify-content: center;
-  padding: 150px 0px 100px 0px;
+  justify-content: center; 
+  padding: 50px 0px;
   @media screen and(max-width:1025px) {
       overflow: hidden;
       background-color: black;
@@ -97,7 +96,75 @@
           color:white;
       }
       .wrap{
-          
+          position: relative;
+          margin:0px auto;
+          width:50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          .number{
+          position: absolute;
+          font:900 45px 'Work Sans', sans-serif;
+          left:-50px;
+          top:-30px;
+          padding-right:5px;
+          overflow: hidden;
+          z-index:1;
+          @media screen and(max-width:1025px) {
+              position: relative;
+              left:0;
+              top:0;
+              padding:5px;
+              color:$bred;
+              &::first-letter{
+                  color:#fff;
+              }
+              .numberCover{
+                  display: none;
+              }
+          }
+          .numberCover{
+              position: absolute;
+              right:-20px;
+              transform: rotateZ(45deg);
+              top:30px;
+              color:transparent;
+              z-index:3;
+              width:40px;
+              height:40px;
+              border-left:2px solid #000;
+              background-color: #fff;
+              z-index:2;    
+          }
+              
+          }
+          span{
+              font-size: 35px;
+              font-weight: 100;
+              letter-spacing: 3px;
+              margin-bottom:-10px;
+              z-index:3;
+          }
+          h2{
+              font:bolder 35px $hans;
+              padding-left:2px;
+              margin-bottom:10px;
+          }
+          .p1{
+              width:100%;
+              margin-bottom:15px;
+          @media screen and(max-width:1025px) {
+              width:100%;
+          }
+          }
+          .p2{
+              width:100%;
+              font-weight: 100;
+              min-height:100px;
+              @media screen and(max-width:1025px) {
+                  width:100%;
+              }
+          }
       }
   }
 
@@ -154,6 +221,7 @@
                 height:400px;
                 transition: all .5s ease-in-out;
                 border:3px solid black;
+                border-bottom: none;
                 @media screen and (max-width:1279px){
                     height:350px;
                 }
@@ -161,17 +229,38 @@
                     height:250px;
                 }
             }
-            .buttons{
+            .btnsBox{
                 display: flex;
-                justify-content: space-between;
                 width:100%;
-
-                button{
-                    padding:5px;
-                    border:3px solid black;
-                    border-top: none;
-                    width:50%;
-                    background-color: transparent;
+                color:#fff;
+                .trafficBtn{
+                    width:25%;
+                    background-color: #000;
+                    color:#fff;
+                    font-size: 14px;
+                    line-height: 3;
+                    cursor: pointer;
+                    transition: all .3s ease-in-out;
+                    &:hover{
+                        background-color: $bred;
+                    }
+                }
+                .branchBtn{
+                    display: flex;
+                    justify-content: space-evenly;
+                    width:75%;
+                    background-color: #000;
+                    cursor: pointer;
+                    line-height:3;
+                    font-size: 14px;
+                    li{
+                        width:33.3%;
+                        
+                    transition: all .3s ease-in-out;
+                    &:hover{
+                        background-color: $bred;
+                    }
+                    }
                 }
             }
         }

@@ -8,7 +8,6 @@ header{
         display: flex;
         align-items: center;
         margin:auto 0px;
-
         .logo{
             display: flex;
             align-items: center;
@@ -26,13 +25,16 @@ header{
         .gnb{
             display:flex;
             align-items: center;
-
             li{
                 padding-left:20px;
                 .gnbLink{
-                    font-size:16px;
+                    font-size:13px;
+                    padding-bottom: 5px;
                     color:#000;
-                    
+                    transition: all .3s ease-in-out;
+                    &:hover{
+                        color:rgba(0,0,0,0.6);
+                    }
             @media screen and (max-width:767px){
                 display: none;
             }

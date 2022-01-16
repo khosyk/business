@@ -7,12 +7,10 @@ import '../Styles/App.css';
 import {AiFillTwitterCircle} from 'react-icons/ai';
 import { SiYoutubemusic } from 'react-icons/si';
 import { RiInstagramFill } from 'react-icons/ri';
+import { ClickToTop } from './Functions';
 
 
 export default function Footer() {
-    const toTop = () =>{
-        document.documentElement.scrollTop = 0;
-    }
     return (
         <footer>
             <div className='footerLeft'>
@@ -27,11 +25,6 @@ export default function Footer() {
                     <p className='p2'>
                         adipisicing elit. Incidunt blanditiis fugiat similique
                     </p>
-                </div>
-                <div className='arrows'>
-                    <span className='arrow'>←</span>
-                    <span>I</span>
-                    <span className='arrow'>→</span>
                 </div>
             </div>
             
@@ -64,7 +57,7 @@ export default function Footer() {
                         </span>
                     </div>
                     <div className='right'>
-                        <button onClick={() => toTop()}>
+                        <button onClick={() => ClickToTop()}>
                         To the top
                         </button>
                     </div>
