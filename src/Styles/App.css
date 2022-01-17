@@ -2901,6 +2901,10 @@ header .inner .gnb .btnMenu {
   min-height: 150px;
   padding: 2px 5px;
 }
+#join .inner form fieldset table tbody tr td .err {
+  color: red;
+  font-size: 12px;
+}
 #join .inner form fieldset table tbody tr .checkBoxes {
   display: flex;
   flex-direction: column;

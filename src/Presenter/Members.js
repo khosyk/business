@@ -103,8 +103,8 @@ const Banner = () => {
     );
 }
 
-const Member01 = (members) => {
-    const memeberData = members.members
+const Member01 = ({members}) => {
+    const memeberData = members
     return (
         <section id="member01">
             <div className='inner'>
@@ -126,8 +126,8 @@ const Member01 = (members) => {
     )
 }
 
-const MemberList = (memeberData) => {
-    const {name, title, src} = memeberData.memeberData;
+const MemberList = ({memeberData}) => {
+    const {name, title, src} = memeberData;
     return(
         
         <li>

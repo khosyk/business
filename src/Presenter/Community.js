@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import React from 'react';
 
 // component
 import Article from "../Components/Article";
@@ -8,24 +7,12 @@ import Article from "../Components/Article";
 import {BsArrowsFullscreen} from 'react-icons/bs'
 
 
-export default function Community() {
-    let [posts, setPosts] = useState([]);
-    const path = process.env.PUBLIC_URL;
-    const url = `${path}/db/community.json`;
-
-    useEffect(() => {
-        axios
-            .get(url)
-            .then(json => {
-                setPosts(json.data.data);
-            })
-    }, []);
-
+export default function Community({posts}) {
     return (
         <>
             <CommunityBanner />
             <Community01 />
-            <Community02 />
+            <Community02 posts={posts}/>
             <Community03 />
         </>
     )
@@ -64,7 +51,7 @@ export default function Community() {
         )
     }
     
-    function Community02() {
+    function Community02({posts}) {
         return (
             <section id='community02'>
                 <main className='inner'>

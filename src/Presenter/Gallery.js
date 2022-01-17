@@ -10,18 +10,18 @@ import { saveInput, setIsPop } from '../modules/GallerySlice';
 
 const body = document.querySelector("body");
 
-function Gallery({  setIndex, index, showPop, handleValue, }) {
+function Gallery({ setIndex, index, showPop, handleValue, }) {
 
 
     return (
         <>
             <GalleryBanner />
             <Gallery01 />
-            <Gallery02 
-            setIndex={setIndex} 
-            index={index} 
-            showPop={showPop} 
-            handleValue={handleValue} 
+            <Gallery02
+                setIndex={setIndex}
+                index={index}
+                showPop={showPop}
+                handleValue={handleValue}
             />
         </>
     )
@@ -64,7 +64,7 @@ function Gallery({  setIndex, index, showPop, handleValue, }) {
 // gallery 02 를 통해 전달되는 값들을 redux state 에서 관리하기
 // 해당 state들은 pop에게도 전달되어야한다.
 
-function Gallery02({  setIndex, index, showPop, handleValue}) {
+function Gallery02({ setIndex, index, showPop, handleValue }) {
 
     const input = useSelector((state) => state.gallery.input);
     const data = useSelector((state) => state.gallery.data);
@@ -76,17 +76,20 @@ function Gallery02({  setIndex, index, showPop, handleValue}) {
             <div className="inner">
                 <main>
                     <div className='searchWrap'>
-                                <input
-                                    type='text'
-                                    onChange={e => {
-                                        dispatch(saveInput(e.target.value));
-                                    }}  value={input} />
+                        <input
+                            type='text'
+                            onChange={e => {
+                                dispatch(saveInput(e.target.value));
+                            }} 
+                            value={input}
+                            placeholder='search here'
+                        />
 
-                        <button onClick={() => {handleValue()}} ><AiOutlineSearch /></button>
+                        <button onClick={() => { handleValue() }} ><AiOutlineSearch /></button>
                     </div>
                     {data.length <= 0 ? <Loader /> : <div className='wrap'>
                         {data.map((data, index) => {
-                            const {server,id,secret,title,farm,owner} =data;
+                            const { server, id, secret, title, farm, owner } = data;
                             const imgSrc = `https://live.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
                             return (
                                 <article key={index} onClick={() => {
@@ -116,13 +119,13 @@ function Gallery02({  setIndex, index, showPop, handleValue}) {
                         }
                     </div>}
                 </main>
-                {isPop ? <Pop index={index}/> : null}
+                {isPop ? <Pop index={index} /> : null}
             </div>
         </section>)
-        
+
     function Pop({ index }) {
-        
-    const imgSrc = useSelector((state => state.gallery.imgSrc));
+
+        const imgSrc = useSelector((state => state.gallery.imgSrc));
 
         return (
             <aside className="pop">
