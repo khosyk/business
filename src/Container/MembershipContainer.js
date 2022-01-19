@@ -10,6 +10,7 @@ export default function MembershipContainer(){
     email: '',
     comments: ''
   }
+  
   const [val, setVal] = useState(initVal);
   const [err, setErr] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);

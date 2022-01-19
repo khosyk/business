@@ -46,7 +46,9 @@ input{
 }
 
 textarea{    
-    resize: none; 
+    resize: none;
+    border:none;
+    background-color: transparent;
 }
 
 button{

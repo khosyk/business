@@ -1,8 +1,26 @@
-import React from 'react';
+import React,{useEffect, useRef} from 'react';
 import Article from '../Components/Article';
 import { Map } from '../Components/Map';
+import emailjs from '@emailjs/browser';
+
+// service_mccg4an
+// template_5skrw04
 
 export default function Contact() {
+    const serviceId = 'service_mccg4an';
+    const templateId ='template_5skrw04';
+    const userId = 'user_X3WvHBNDXbyaJrxoVv13k'
+    const sendMail = useRef(null);
+    
+    function handleSubmit (e){
+        e.preventDefault();      
+        emailjs.sendForm(serviceId, templateId, sendMail.current,userId).then((result) =>{
+            console.log(result.text);
+        }, (err) =>{
+            console.log(err.text);
+        })
+    }
+
     return (
         <>
             <ContactBanner />
@@ -62,33 +80,47 @@ export default function Contact() {
             <section id='contact03'>
                 <div className='inner'>
                     <div className="wrap">
-                        <h4>
+                        <h3>
                             SEND A MESSAGE
-                        </h4>
-                        <form>
+                        </h3>
+                        <form ref={sendMail}
+                        onSubmit={handleSubmit}>
                             <div className="inputWrap">
                                 <label>
-                                    <input placeholder='NAME'></input>
+                                    NAME
                                 </label>
+                                <input placeholder='Name here'
+                                    name='name'
+                                    ></input>
                                 <label>
-                                    <input placeholder='EMAIL'></input>
-                                </label>
+                                    EMAIL
+                                    </label>
+                                    <input placeholder='Email here'
+                                    name='email'
+                                    ></input>
                             </div>
-
                             <div className="inputWrap">
                                 <label>
-                                    <input placeholder='PASSWORD'></input>
-                                </label>
+                                    COMPANY
+                                    </label>
+                                    <input placeholder='Company here'
+                                    name='company'
+                                    ></input>
                                 <label>
-                                    <input placeholder='PHONE NUMBER'></input>
-                                </label>
+                                    PHONE NUMBER
+                                    </label>
+                                    <input placeholder='Phone number here'
+                                    name='phone'
+                                    ></input>
                             </div>
-                            <label className='query'>
-                                <textarea placeholder='MESSAGE'></textarea>
-                            </label>
+                            <label className='message'>
+                                MESSAGE
+                                </label>
+                                <textarea placeholder='Message here'
+                                name='message'
+                                ></textarea>
                             <div className="buttonWrap">
-
-                                <button>
+                                <button type='submit'>
                                     SEND
                                 </button>
                             </div>

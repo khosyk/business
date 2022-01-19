@@ -47,6 +47,8 @@ input {
 
 textarea {
   resize: none;
+  border: none;
+  background-color: transparent;
 }
 
 button {
@@ -2246,82 +2248,68 @@ header .inner .gnb .btnMenu {
 #community02 {
   position: relative;
   width: 100%;
-  padding: 50px 0px;
+  padding: 10px 0px;
   display: flex;
   justify-content: center;
-  background-color: #eee;
   margin-bottom: 200px;
 }
-#community02 main {
+#community02 .inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#community02 .inner::before {
+  content: "";
+  width: 80%;
+  height: 30px;
+  border-top: 3px solid #000;
+  color: #fff;
+  border-radius: 1px;
+}
+#community02 .inner .inputWrap {
+  max-width: 600px;
   width: 80%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1px;
+  margin-bottom: 50px;
 }
-#community02 main .left {
-  width: 70%;
-  padding: 20px;
-  padding-right: 15%;
+#community02 .inner .inputWrap input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #888;
 }
-#community02 main .left h2 {
-  position: relative;
-  font-size: 20px;
-  margin-bottom: 25px;
+#community02 .inner .inputWrap input:focus {
+  outline: none;
 }
-#community02 main .left h2::before {
-  content: "";
-  position: absolute;
-  width: 60px;
-  height: 10px;
-  border-top: 2px solid black;
-  top: -20px;
+#community02 .inner .inputWrap textarea {
+  border-top: none;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
 }
-#community02 main .left article {
-  margin-bottom: 15px;
-  transition: all 0.5s ease-in-out;
+#community02 .inner .inputWrap textarea:focus {
+  outline: none;
 }
-#community02 main .left article:hover {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
+#community02 .inner .inputWrap .btnWrap {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
-#community02 main .left article:hover * {
-  transform: translateX(10px);
-  color: #222;
-  transition: all 0.5s ease-in-out;
+#community02 .inner .inputWrap .btnWrap button {
+  width: 50%;
+  padding: 5px 8px;
+  background-color: #000;
+  color: white;
+  box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.1);
 }
-#community02 main .left article h3 {
-  font-weight: 400;
-  font-size: 14px;
-  margin-bottom: -5px;
-  overflow-wrap: break-word;
-}
-#community02 main .left article span {
-  display: inline-block;
-  font-weight: 400;
-  font-size: 14px;
-}
-#community02 main .left article time {
-  display: inline-block;
-  padding-left: 10px;
-  font-weight: 400;
-  font-size: 14px;
-}
-#community02 main .right {
-  width: 30%;
-  padding: 20px;
-}
-#community02 main .right span {
-  display: inline-block;
-  position: relative;
-  font-size: 20px;
-  margin-bottom: 25px;
-  font-weight: 600;
-}
-#community02 main .right span::before {
-  content: "";
-  position: absolute;
-  width: 60px;
-  height: 10px;
-  border-top: 2px solid black;
-  top: -20px;
+#community02 .inner .inputWrap .btnWrap button:hover {
+  background-color: #d6336c;
 }
 
 #community03 {
@@ -2483,7 +2471,6 @@ header .inner .gnb .btnMenu {
 @media screen and (max-width: 1025px) {
   #contact01 {
     overflow: hidden;
-    background-color: black;
   }
 }
 #contact01 .word {
@@ -2500,7 +2487,6 @@ header .inner .gnb .btnMenu {
   #contact01 .word {
     width: 100%;
     text-align: center;
-    color: white;
   }
 }
 #contact01 .word .wrap {
@@ -2527,9 +2513,10 @@ header .inner .gnb .btnMenu {
     top: 0;
     padding: 5px;
     color: #d6336c;
+    transition: all 0.3s ease-in-out;
   }
   #contact01 .word .wrap .number::first-letter {
-    color: #fff;
+    color: #000;
   }
   #contact01 .word .wrap .number .numberCover {
     display: none;
@@ -2688,13 +2675,18 @@ header .inner .gnb .btnMenu {
 #contact03 .inner {
   width: 80%;
 }
+@media screen and (max-width: 1025px) {
+  #contact03 .inner {
+    width: 100%;
+  }
+}
 #contact03 .inner .wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#contact03 .inner .wrap h4 {
+#contact03 .inner .wrap h3 {
   text-align: center;
   padding-bottom: 100px;
   font: 900 45px "Work Sans", sans-serif;
@@ -2707,40 +2699,72 @@ header .inner .gnb .btnMenu {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 20px;
+  padding: 70px 20px;
+}
+@media screen and (max-width: 1025px) {
+  #contact03 .inner .wrap form {
+    padding: 70px 10px;
+  }
 }
 #contact03 .inner .wrap form .inputWrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 70%;
   margin-bottom: 10px;
+}
+@media screen and (max-width: 1025px) {
+  #contact03 .inner .wrap form .inputWrap {
+    width: 100%;
+  }
 }
 #contact03 .inner .wrap form .inputWrap label {
-  letter-spacing: 8px;
-  font-weight: 100;
-  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 14px;
+  width: 15%;
+  padding: 15px 0px;
 }
-#contact03 .inner .wrap form .inputWrap label input {
-  padding: 8px 0px;
-  margin-top: 10px;
+@media screen and (max-width: 1025px) {
+  #contact03 .inner .wrap form .inputWrap label {
+    font-size: 12px;
+  }
+}
+#contact03 .inner .wrap form .inputWrap input {
+  padding: 8px 2px;
+  width: 25%;
+  margin-right: 5%;
+  margin-bottom: 3px;
+  min-width: 100px;
+  max-width: 150px;
   border: none;
   border-bottom: 1px solid #888;
   font-family: "Noto Sans KR", sans-serif;
 }
-#contact03 .inner .wrap form .query {
-  margin-top: 18px;
-  width: 400px;
+#contact03 .inner .wrap form .inputWrap input:last-child {
+  margin-right: 0px;
 }
-#contact03 .inner .wrap form .query textarea {
-  width: 400px;
+@media screen and (max-width: 1025px) {
+  #contact03 .inner .wrap form .inputWrap input {
+    font-size: 12px;
+    padding: 2px 2px;
+  }
+}
+#contact03 .inner .wrap form .message {
+  display: inline-block;
+  margin: 20px auto 40px auto;
+}
+#contact03 .inner .wrap form textarea {
+  width: 90%;
+  max-width: 600px;
   height: 200px;
-  border: none;
-  border-bottom: 1px solid #8888;
+  border: 1px solid #8888;
+  border-radius: 3px;
+  padding: 3px;
   font-family: "Noto Sans KR", sans-serif;
 }
 #contact03 .inner .wrap form .buttonWrap {
-  width: 400px;
+  width: 90%;
+  max-width: 600px;
   display: flex;
   justify-content: flex-end;
   margin-top: 18px;
@@ -2872,6 +2896,7 @@ header .inner .gnb .btnMenu {
   width: 50%;
   padding-left: 5%;
   text-align: left;
+  font-weight: 400;
 }
 @media screen and (max-width: 1025px) {
   #join .inner form fieldset table tbody tr th {
