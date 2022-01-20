@@ -62,13 +62,19 @@ function Community02() {
     const updateTextarea = useRef(null);
     const showBox = useRef(null);
 
-    const [posts, setPosts] = useState([
-        { title: 'Hello0', content: 'Here comes description in detail.' },
-        { title: 'Hello1', content: 'Here comes description in detail.' },
-        { title: 'Hello2', content: 'Here comes description in detail.' },
-        { title: 'Hello3', content: 'Here comes description in detail.' }
-    ]);
 
+    const getLocalItems =()=>{
+        let data = localStorage.getItem('posts');
+
+        if(data){
+            return JSON.parse(data);
+        }else{
+            return[];
+        }
+    }
+
+    const [posts,setPosts] = useState(getLocalItems);
+    
     const createPost = () => {
         if (!input.current.value || !textarea.current.value) {
             alert('제목과 본문을 입력하세요');
@@ -127,13 +133,15 @@ function Community02() {
     }
 
     useEffect(() => {
+        localStorage.setItem('posts', JSON.stringify(posts))
         frame.current.classList.add('on');
-    }, []);
+    }, [posts]);
 
     return (
         <section ref={frame} id='community02'>
             <div className="inner">
                 <div className="inputWrap">
+                    <h3>여기서 게시글을 작성하세요.</h3>
                     <input
                         type="text"
                         placeholder='제목을 입력하세요'
@@ -146,17 +154,15 @@ function Community02() {
                     >
                     </textarea>
                     <div className='btnWrap'>
-
                     <button onClick={() => {
                         input.current.value = '';
                         textarea.current.value = '';
-                    }}>CANCEL</button>
-
-                    <button onClick={createPost}>CREATE</button>
+                    }}>취소</button>
+                    <button onClick={createPost}>생성</button>
                     </div>
                 </div>
 
-                <div className="showWrap" ref={showBox}>
+                <div className="postsWrap" ref={showBox}>
                     {
                         posts.map((post, index) => {
                             return (
@@ -165,29 +171,29 @@ function Community02() {
                                         post.enableUpdate
                                             ?
                                             // update
-                                            <>
-                                                <div className="post">
-                                                    <input type="text" defaultValue={post.title} ref={updateInput} /><br />
+                                                <div className="postInput">
+                                                    <input type="text" defaultValue={post.title} ref={updateInput} />
                                                     <textarea defaultValue={post.content} ref={updateTextarea}></textarea>
-                                                </div>
-
+                                                    
                                                 <ul className="btns">
+                                                <li onClick={() => disableUpdate(index)}>취소</li>
                                                     <li onClick={() => updatePost(index)}>입력</li>
-                                                    <li onClick={() => disableUpdate(index)}>취소</li>
+                                                    
                                                 </ul>
-                                            </>
+                                                </div>
                                             :
                                             //read 
                                             <>
-                                                <div className="post">
-                                                    <h2>{post.title}</h2>
+                                                <div className="postText">
+                                                    <h3>{post.title}</h3>
                                                     <p>{post.content}</p>
-                                                </div>
 
                                                 <ul className="btns">
-                                                    <li onClick={() => enableUpdate(index)}>수정</li>
                                                     <li onClick={() => deletePost(index)}>삭제</li>
+                                                    <li onClick={() => enableUpdate(index)}>수정</li>
                                                 </ul>
+                                                
+                                                </div>
                                             </>
                                     }
                                 </article>

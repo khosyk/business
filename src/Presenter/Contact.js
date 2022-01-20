@@ -89,13 +89,13 @@ export default function Contact() {
                                 <label>
                                     NAME
                                 </label>
-                                <input placeholder='Name here'
+                                <input placeholder='Name'
                                     name='name'
                                     ></input>
                                 <label>
                                     EMAIL
                                     </label>
-                                    <input placeholder='Email here'
+                                    <input placeholder='Email'
                                     name='email'
                                     ></input>
                             </div>
@@ -103,20 +103,20 @@ export default function Contact() {
                                 <label>
                                     COMPANY
                                     </label>
-                                    <input placeholder='Company here'
+                                    <input placeholder='Company '
                                     name='company'
                                     ></input>
                                 <label>
                                     PHONE NUMBER
                                     </label>
-                                    <input placeholder='Phone number here'
+                                    <input placeholder='Phone number'
                                     name='phone'
                                     ></input>
                             </div>
                             <label className='message'>
                                 MESSAGE
                                 </label>
-                                <textarea placeholder='Message here'
+                                <textarea placeholder='Message'
                                 name='message'
                                 ></textarea>
                             <div className="buttonWrap">

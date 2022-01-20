@@ -5,8 +5,12 @@
 $bred : #d6336c ;
 $hans : 'Black Han Sans', sans-serif;
 
-// Header part
+// Header
 @import 'header';
+
+// aisde 
+
+@import 'aside';
 
 // pages
 @import 'main';
@@ -17,7 +21,7 @@ $hans : 'Black Han Sans', sans-serif;
 @import 'contact';
 @import 'membership';
 
-// footer part
+// footer
 @import 'footer';
 
 // component

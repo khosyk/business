@@ -2149,7 +2149,7 @@ header .inner .gnb .btnMenu {
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 50px 0px 100px 0px;
+  padding: 50px 0px 50px 0px;
 }
 @media screen and (max-width: 1025px) {
   #community01 {
@@ -2263,14 +2263,14 @@ header .inner .gnb .btnMenu {
 #community02 .inner::before {
   content: "";
   width: 80%;
-  height: 30px;
+  height: 90px;
   border-top: 3px solid #000;
   color: #fff;
   border-radius: 1px;
 }
 #community02 .inner .inputWrap {
   max-width: 600px;
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2278,20 +2278,25 @@ header .inner .gnb .btnMenu {
   border-radius: 1px;
   margin-bottom: 50px;
 }
+#community02 .inner .inputWrap h3 {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 35px;
+}
 #community02 .inner .inputWrap input {
   width: 100%;
   padding: 5px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #888;
+  border-bottom: 2px solid #000;
 }
 #community02 .inner .inputWrap input:focus {
   outline: none;
 }
 #community02 .inner .inputWrap textarea {
-  border-top: none;
   width: 100%;
   padding: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #000;
 }
 #community02 .inner .inputWrap textarea:focus {
   outline: none;
@@ -2302,14 +2307,134 @@ header .inner .gnb .btnMenu {
   width: 100%;
 }
 #community02 .inner .inputWrap .btnWrap button {
-  width: 50%;
+  width: 25%;
   padding: 5px 8px;
   background-color: #000;
   color: white;
   box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.1);
 }
+#community02 .inner .inputWrap .btnWrap button:first-child {
+  border-right: 1px solid #fff;
+}
 #community02 .inner .inputWrap .btnWrap button:hover {
   background-color: #d6336c;
+}
+#community02 .inner .postsWrap {
+  justify-content: center;
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(3, minmax(120px, 300px));
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 20px;
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 719px) {
+  #community02 .inner .postsWrap {
+    grid-template-columns: repeat(2, minmax(120px, 350px));
+  }
+}
+#community02 .inner .postsWrap article {
+  position: relative;
+}
+#community02 .inner .postsWrap article .postInput {
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  top: 0px;
+  left: 0px;
+  background-color: #fff;
+  z-index: 999;
+}
+#community02 .inner .postsWrap article .postInput input {
+  height: 30px;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid #888;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+}
+#community02 .inner .postsWrap article .postInput input:focus {
+  outline: none;
+}
+#community02 .inner .postsWrap article .postInput textarea {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 100%;
+  padding: 5px;
+  min-height: 300px;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  border-radius: 1px;
+  border-top: none;
+  transition: all 0.3s ease-in-out;
+}
+#community02 .inner .postsWrap article .postInput textarea:focus {
+  outline: none;
+}
+#community02 .inner .postsWrap article .postInput .btns {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  position: absolute;
+  top: 350px;
+  left: 0px;
+  transition: all 0.3s ease-in-out;
+}
+#community02 .inner .postsWrap article .postInput .btns li {
+  text-align: center;
+  width: 25%;
+  padding: 5px 8px;
+  background-color: #000;
+  color: white;
+  box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+#community02 .inner .postsWrap article .postInput .btns li:first-child {
+  border-right: 1px solid #fff;
+}
+#community02 .inner .postsWrap article .postInput .btns li:hover {
+  background-color: #d6336c;
+}
+#community02 .inner .postsWrap article .postText {
+  padding: 20px;
+  box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+  position: relative;
+}
+#community02 .inner .postsWrap article .postText h3 {
+  font-size: 16px;
+  width: 100%;
+  border-bottom: 2px solid #d6336c;
+}
+#community02 .inner .postsWrap article .postText p {
+  font-size: 14px;
+}
+#community02 .inner .postsWrap article .postText .btns {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transition: all 0.3s ease-in-out;
+}
+#community02 .inner .postsWrap article .postText .btns li {
+  text-align: center;
+  width: 25%;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+#community02 .inner .postsWrap article .postText .btns li:first-child {
+  border-right: 1px solid #fff;
+}
+#community02 .inner .postsWrap article .postText .btns li:hover {
+  background-color: #d6336c;
+  color: white;
 }
 
 #community03 {
@@ -2737,7 +2862,7 @@ header .inner .gnb .btnMenu {
   min-width: 100px;
   max-width: 150px;
   border: none;
-  border-bottom: 1px solid #888;
+  border-bottom: 2px solid #000;
   font-family: "Noto Sans KR", sans-serif;
 }
 #contact03 .inner .wrap form .inputWrap input:last-child {
@@ -2757,7 +2882,7 @@ header .inner .gnb .btnMenu {
   width: 90%;
   max-width: 600px;
   height: 200px;
-  border: 1px solid #8888;
+  border-bottom: 2px solid #000;
   border-radius: 3px;
   padding: 3px;
   font-family: "Noto Sans KR", sans-serif;
