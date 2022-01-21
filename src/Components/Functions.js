@@ -22,3 +22,8 @@ export const ActiveStyle =({ isActive }) => {
 export const ClickToTop = () =>{
   document.documentElement.scrollTop = 0
 }
+
+export const handleAside = (asideMenu) => {
+  asideMenu.current.classList.add('on')
+
+}
