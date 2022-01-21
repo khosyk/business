@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-function Aside() {
+export default function Aside({setAsideMenu}) {
   
   return(
-    <aside>
+    <aside id='aside'>
+      <button onClick={setAsideMenu(false)}>X</button>
           <ul className="gnb">
             <li>
               <Link 

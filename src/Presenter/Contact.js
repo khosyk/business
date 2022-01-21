@@ -1,4 +1,4 @@
-import React,{useEffect, useRef} from 'react';
+import React,{ useRef} from 'react';
 import Article from '../Components/Article';
 import { Map } from '../Components/Map';
 import emailjs from '@emailjs/browser';

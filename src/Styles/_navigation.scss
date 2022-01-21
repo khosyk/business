@@ -1,0 +1,113 @@
+
+header{
+    position: fixed;
+    top:0;
+    z-index: 111;
+    width:100%;
+    background: #fff;
+    .inner{
+        height:70px;
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        margin:auto 0px;
+        position: relative;
+        margin-right: 10%;
+        @media screen and (max-width:719px) {
+            margin-right:30px;}
+        .logo{
+            position: absolute;
+            top:25px;
+            left:10%;
+            display: flex;
+        img{
+            width:18px;
+            height:18px;
+        }
+        h1 {
+            margin-left:10px;
+            font-size: 16px;
+            color: #000;
+        }
+        
+        }
+        .gnb{
+            display:flex;
+            align-items: center;
+
+            li{
+                padding-left:20px;
+                .gnbLink{
+                    font-size:13px;
+                    padding-bottom: 5px;
+                    color:#000;
+                    transition: all .3s ease-in-out;
+                    &:hover{
+                        color:rgba(0,0,0,0.6);
+                    }
+                    @media screen and (max-width:861px){
+                        display: none;
+                    }
+                }
+            .btnMenu{
+                margin: 6px 0px 0px 20px;
+                font-size: 18px;
+                color:#000;
+                cursor: pointer;
+                margin-right: 10%;
+           
+            }
+            }
+        }
+    }
+    
+}
+
+#aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top:0;
+    right:0;
+    padding:40px;
+    width:100px;
+    z-index: 9999;
+    height: 100vh;
+    width: fit-content;
+    background-color: rgba(255,255,255,0.5);
+    button{
+        font-size: 20px;
+        font-weight: 100;
+        position: absolute;
+        top:20px;
+        right:10%;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        &:hover{
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+        }
+        @media screen and (max-width:719px) {
+        right:30px;}
+        @media screen and (min-width:719px) {
+        right:100%;
+        left:10%;
+    }
+    }
+    ul{
+        padding-top:50px ;
+        li{
+            margin-bottom: 20px;
+            .gnbLink{
+                font-size:13px;
+                padding-bottom: 5px;
+                color:#000;
+                transition: all .3s ease-in-out;
+                &:hover{
+                    color:rgba(0,0,0,0.6);
+                }
+            }
+      }
+    }
+  }

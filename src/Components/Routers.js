@@ -8,14 +8,14 @@ import YoutubeContainer from "../Container/YoutubeContainer";
 import MainContainer from "../Container/MainContainer";
 import MembershipContainer from '../Container/MembershipContainer';
 import Footer from './Footer';
-import Header from './Header';
+import Navigation from './Navigation';
 
 export default function Routers() {
     
   
     return (
         <HashRouter>
-            <Header />
+            <Navigation />
             <Routes>
                     <Route path='/' element={<MainContainer />} />
                     <Route path='/community' element={<CommunityContainer />} />

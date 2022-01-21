@@ -91,6 +91,7 @@ function Gallery02({ setIndex, index, showPop, handleValue }) {
                         {data.map((data, index) => {
                             const { server, id, secret, title, farm, owner } = data;
                             const imgSrc = `https://live.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
+                            const ownerImgSrc = `http://farm${farm}.staticflickr.com/${server}/buddyicons/${owner}.jpg`;
                             return (
                                 <article key={index} onClick={() => {
                                     dispatch(setIsPop(true))
@@ -108,7 +109,7 @@ function Gallery02({ setIndex, index, showPop, handleValue }) {
                                         <h2>{title === '' ? 'NULL' : title}</h2>
                                         <div className='picBottom'>
                                             <div>
-                                                <img src={`http://farm${farm}.staticflickr.com/${server}/buddyicons/${owner}.jpg`} alt={title}></img>
+                                                <img src={ownerImgSrc} alt={title}></img>
                                                 <strong>{owner}</strong>
                                             </div>
                                         </div>

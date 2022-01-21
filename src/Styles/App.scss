@@ -5,12 +5,8 @@
 $bred : #d6336c ;
 $hans : 'Black Han Sans', sans-serif;
 
-// Header
-@import 'header';
-
-// aisde 
-
-@import 'aside';
+// Header, aside
+@import 'navigation';
 
 // pages
 @import 'main';

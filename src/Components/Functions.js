@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
-export function ScrollToTop() {
+export function ScrollToTop(isMenu) {
   let location = useLocation();
   let [locations, setLocations] = useState([]);
   useEffect(()=>{
     setLocations([...locations,location.pathname]);
-    if(locations[locations.length - 2] !== locations[locations.length - 3]){
-      window.scrollTo(0,0);
+    if(isMenu !== true && locations[locations.length - 2] !== locations[locations.length - 3]){
+      document.documentElement.scrollTop = 0
+
     }
     return ()=>setLocations();
   },[location]);
@@ -23,7 +24,9 @@ export const ClickToTop = () =>{
   document.documentElement.scrollTop = 0
 }
 
-export const handleAside = (asideMenu) => {
-  asideMenu.current.classList.add('on')
 
+export const ActiveAsideStyle =({ isActive }) => {
+  return {
+    fontWeight: isActive ? '800' :''
+  };
 }
