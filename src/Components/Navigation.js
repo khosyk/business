@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import '../Styles/App.css';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-// icons
-import Logo from '../images/dcode.png'
-import { FcMenu } from 'react-icons/fc';
+//import functions
 import { ActiveAsideStyle, ActiveStyle, ScrollToTop } from './Functions';
 
+// img, icons
+import Logo from '../images/dcode.png'
+import { FcMenu } from 'react-icons/fc';
+import {MdCall, MdEmail} from 'react-icons/md'
 
+
+const body = document.querySelector("body");
 export default function Navigation() {
 
   //by asideMenu change nav's visuallity 
@@ -41,6 +45,11 @@ export default function Navigation() {
   ScrollToTop(isMenu);
   return (
     <>
+    {asideMenu ?<div className='asideBackground' onClick={() => {setAsideMenu(false);
+        setIsMenu(true);    
+        body.style.overflow = "auto";
+        }}>
+        </div> :''}
       <header>
         <NavMain asideMenu={asideMenu} setAsideMenu={setAsideMenu} setIsMenu={setIsMenu} Links={Links} />
       </header>
@@ -70,16 +79,15 @@ export default function Navigation() {
                   {Links.title}
                 </NavLink>
               </li>)}
-
               <li>
                 <FcMenu
                   onClick={() => {
                     setAsideMenu(!asideMenu)
                     setIsMenu(true)
+                    body.style.overflow = "hidden";
                   }}
                   className="btnMenu" />
               </li>
-
             </ul>
           </nav> : ''}
         </div>
@@ -92,13 +100,19 @@ export default function Navigation() {
 
     return (
       <>
-        <div>
-        </div>
         <aside id='aside'>
-          <button onClick={() => {
-            setAsideMenu(false);
-            setIsMenu(true);
-          }}>X</button>
+            <div className='logo'>
+            <Link className='logoBtn' to="/" >
+              <img src={Logo} alt='dcodelab logo' />
+            </Link>
+            <Link className='logoBtn' to="/">
+            <h1>
+                DCODELAB
+              </h1>
+            </Link>
+            </div>
+          {/* <button 
+          }}>X</button> */}
           <ul>
           {Links.map((Links, index) => <li key={index}>
                 <NavLink style={ActiveAsideStyle} className='gnbLink' to={Links.to}
@@ -107,6 +121,11 @@ export default function Navigation() {
                 </NavLink>
               </li>)}
           </ul>
+          <div className='asideBottom'>
+            Contact Us<br/>
+            <MdCall/>123-1234<br/>
+            <MdEmail/>ex@mail.com<br/>
+          </div>
         </aside>
       </>
     )

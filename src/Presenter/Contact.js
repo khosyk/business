@@ -1,26 +1,11 @@
-import React,{ useRef} from 'react';
+import React from 'react';
 import Article from '../Components/Article';
+import Mail from '../Components/Mail';
 import { Map } from '../Components/Map';
-import emailjs from '@emailjs/browser';
 
-// service_mccg4an
-// template_5skrw04
 
 export default function Contact() {
-    const serviceId = 'service_mccg4an';
-    const templateId ='template_5skrw04';
-    const userId = 'user_X3WvHBNDXbyaJrxoVv13k'
-    const sendMail = useRef(null);
     
-    function handleSubmit (e){
-        e.preventDefault();      
-        emailjs.sendForm(serviceId, templateId, sendMail.current,userId).then((result) =>{
-            console.log(result.text);
-        }, (err) =>{
-            console.log(err.text);
-        })
-    }
-
     return (
         <>
             <ContactBanner />
@@ -76,58 +61,10 @@ export default function Contact() {
 
     function Contact03() {
 
-        return (
-            <section id='contact03'>
-                <div className='inner'>
-                    <div className="wrap">
-                        <h3>
-                            SEND A MESSAGE
-                        </h3>
-                        <form ref={sendMail}
-                        onSubmit={handleSubmit}>
-                            <div className="inputWrap">
-                                <label>
-                                    NAME
-                                </label>
-                                <input placeholder='Name'
-                                    name='name'
-                                    ></input>
-                                <label>
-                                    EMAIL
-                                    </label>
-                                    <input placeholder='Email'
-                                    name='email'
-                                    ></input>
-                            </div>
-                            <div className="inputWrap">
-                                <label>
-                                    COMPANY
-                                    </label>
-                                    <input placeholder='Company '
-                                    name='company'
-                                    ></input>
-                                <label>
-                                    PHONE NUMBER
-                                    </label>
-                                    <input placeholder='Phone number'
-                                    name='phone'
-                                    ></input>
-                            </div>
-                            <label className='message'>
-                                MESSAGE
-                                </label>
-                                <textarea placeholder='Message'
-                                name='message'
-                                ></textarea>
-                            <div className="buttonWrap">
-                                <button type='submit'>
-                                    SEND
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
+        return(
+            <>
+            <Mail/>
+            </>
         )
-    }
+}
 }

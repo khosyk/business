@@ -8,7 +8,6 @@ export function ScrollToTop(isMenu) {
     setLocations([...locations,location.pathname]);
     if(isMenu !== true && locations[locations.length - 2] !== locations[locations.length - 3]){
       document.documentElement.scrollTop = 0
-
     }
     return ()=>setLocations();
   },[location]);
@@ -27,6 +26,7 @@ export const ClickToTop = () =>{
 
 export const ActiveAsideStyle =({ isActive }) => {
   return {
-    fontWeight: isActive ? '800' :''
+    fontWeight: isActive ? '800' :'',
+    borderLeft: isActive ? '5px solid #d6336c' : '',
   };
 }
