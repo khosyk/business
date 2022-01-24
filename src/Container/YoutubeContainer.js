@@ -31,7 +31,6 @@ export default function YoutubeContainer() {
     )
     
 async function GetYoutube(){
-
     const playListId = 'PLaSDflnRoEc328ekRsg_PzCFn7FWtAVYG'
     const num = 4;
     const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyAHktbABRsBIOdePuAZVbwNE1spHHuJ3_Y&playlistId=${playListId}&maxResults=${num}`;

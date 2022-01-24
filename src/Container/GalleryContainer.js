@@ -27,14 +27,10 @@ export default function GalleryContainer() {
     const url2 = `${base}photos.search&api_key=${api_key}&per_page=${numbers}&format=json&nojsoncallback=1&privacy_filter=1&tags=${input}`;
     const url3 = `${base}photos.search&api_key=${api_key}&per_page=${numbers}&format=json&nojsoncallback=1&privacy_filter=1&tags=${''}`;
 
+        useEffect(() => {
+            getFlickr()
+        }, []);
 
-    useEffect(() => {
-        axios.get(url)
-            .then(json => {
-                dispatch(saveData(json.data.photos.photo))
-            })
-
-    }, []);
 
     return (
         <Gallery
@@ -45,20 +41,28 @@ export default function GalleryContainer() {
         />
     )
 
+    async function getFlickr(){
+        
+    try{
+        await axios.get(url)
+        .then(json => {
+            dispatch(saveData(json.data.photos.photo))
+        })
+    }catch(err){
+        console.log(`Gallery Err:{${err}}`)
+    }
+    }
 
     // get input data
-
     // load input's search and reset input 
     async function handleValue() {
 
         try {
-
             await axios.get(input === '' ? url3 : url2).then(json => {
                 json.data.photos.photo.length === 0 ?
                     alert('there is no pics for this keyword') :
                     dispatch(saveData(json.data.photos.photo));
             }, [input])
-
             setTimeout(() => {
                 dispatch(resetInput())
             }, 1000)
@@ -67,8 +71,6 @@ export default function GalleryContainer() {
             alert(`error: ${err}`)
         }
     }
-
-
 
     // show Popup image
     function showPop(index) {

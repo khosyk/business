@@ -16,7 +16,7 @@ import {
 // sources
 
 
-export default function Youtube({ items, loader, isPop, setIsPop, setYoutubeData, youtubeData, lockScroll }) {
+export default function Youtube({ items, isPop, setIsPop, setYoutubeData, youtubeData, lockScroll }) {
     return (
         <>
             <Banner />
