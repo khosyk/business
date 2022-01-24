@@ -43,7 +43,6 @@ header{
         .gnb{
             display:flex;
             align-items: center;
-
             li{
                 padding-left:20px;
                 .gnbLink{
@@ -57,6 +56,9 @@ header{
                     @media screen and (max-width:861px){
                         display: none;
                     }
+                }
+                .btnMenu{
+                    margin-top: 6px;
                 }
             }
         }

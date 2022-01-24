@@ -300,41 +300,46 @@
                     padding: 70px 10px;
                 }
                 .inputWrap{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     width:70%;
-                    margin-bottom: 10px;
-                    @media screen and (max-width:1025px) {
-                        width:100%;
-                    }
-                    label{
-                        display: inline-block;
-                        font-size: 14px;
-                        width:15%;
-                        padding: 15px 0px;
-                        @media screen and (max-width:1025px) {
-                        font-size: 12px;
+                    max-width: 600px;
+                    display: flex;
+                    align-items: center;
+                    .inputs{
+                        width:50%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        position: relative;
+                        margin-bottom: 30px;
+                        label{
+                            width:40%;
+                            display: block;
+                            transition: all .3s ease-in-out;
+                            @media screen and(max-width:1025px) {
+                                font-size: 12px;
+                            }
+                        }
+                        input{
+                            width:50%;
+                            line-height:2.5;
+                            border-bottom: 2px solid #666;
+                            transition: all .3s ease-in-out;
+                            @media screen and(max-width:1025px) {
+                                font-size: 10px;
+                            }
+                        }
+                        .topInnerWrap{
+                            display: flex;
+                            align-items: center;
+                            width:100%;
+                        }
+                        span{
+                            position: absolute;
+                            bottom:-23px;
+                            font-size: 12px;
+                            color:red;
                         }
                     }
-                    input{
-                        padding:8px 2px;
-                        width:25%;
-                        margin-right: 5%;
-                        margin-bottom: 3px;
-                        min-width: 100px;
-                        max-width: 150px;
-                        border: none;
-                        border-bottom: 2px solid #000;
-                        font-family:'Noto Sans KR', sans-serif;
-                        &:last-child{
-                            margin-right: 0px;
-                        }
-                        @media screen and (max-width:1025px) {
-                        font-size: 12px;
-                        padding: 2px 2px;
-                    }
-                        }
                 }
                 .message{
                     display: inline-block;
@@ -366,6 +371,11 @@
                             background-color: $bred;
                         }
                     }
+                }
+                .errMessage{
+                    padding-top: 10px;
+                    font-size: 12px;
+                    color:red;
                 }
             }
         }

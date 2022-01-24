@@ -106,29 +106,34 @@ const Intro02 = () => {
                 </h3>
                 <ul>
                     <li>
+                    <Link to='/youtube'>
                         <HiSpeakerphone className='icons' />
                         <h4>Lorem ipsum dolor</h4>
                         <p>lorem ipsum dolor bill make some rain please</p>
                         <b>
                             Read News
                         </b>
+                    </Link>
                     </li>
                     <li>
+                        <Link to='/youtube'>
                         <BsGearWideConnected className='icons' />
                         <h4>Lorem ipsum dolor</h4>
                         <p>lorem ipsum dolor et doelr consectetur adipisicing </p>
                         <b>
                             Read News
                         </b>
+                        </Link>
                     </li>
                     <li>
-
+                    <Link to='/youtube'>
                         <FaUserFriends className='icons' />
                         <h4>Lorem ipsum dolor</h4>
                         <p>sit amet consectetur adipisicing elit.Lorems is really awesome</p>
                         <b>
                             Read News
                         </b>
+                    </Link>
                     </li>
 
                 </ul>
